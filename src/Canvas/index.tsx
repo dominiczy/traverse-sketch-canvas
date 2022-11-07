@@ -95,6 +95,7 @@ export const Canvas = React.forwardRef<CanvasRef, CanvasProps>((props, ref) => {
       x: pointerEvent.pageX - boundingArea.left - scrollLeft,
       y: pointerEvent.pageY - boundingArea.top - scrollTop,
     };
+    console.log({ pointerEvent, point });
 
     return point;
   };
