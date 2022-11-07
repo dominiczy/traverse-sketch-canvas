@@ -46,6 +46,7 @@ export interface CanvasProps {
   allowOnlyPointerType: string;
   style: React.CSSProperties;
   svgStyle: React.CSSProperties;
+  coordTrafo: (point: any) => any;
 }
 
 export interface CanvasRef {
@@ -74,6 +75,7 @@ export const Canvas = React.forwardRef<CanvasRef, CanvasProps>((props, ref) => {
       borderRadius: '0.25rem',
     },
     svgStyle = {},
+    coordTrafo = coords => coords
   } = props;
 
   const canvasRef = React.useRef<HTMLDivElement>(null);
@@ -91,10 +93,14 @@ export const Canvas = React.forwardRef<CanvasRef, CanvasProps>((props, ref) => {
       return { x: 0, y: 0 };
     }
 
-    const point: Point = {
+    let coords = {
       x: pointerEvent.pageX - boundingArea.left - scrollLeft,
       y: pointerEvent.pageY - boundingArea.top - scrollTop,
     };
+    coords = coordTrafo(coords);
+
+
+    const point: Point = coords;
     console.log({ pointerEvent, point });
 
     return point;
