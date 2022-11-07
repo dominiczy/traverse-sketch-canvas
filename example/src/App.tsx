@@ -5,7 +5,7 @@ import {
   ReactSketchCanvas,
   ReactSketchCanvasProps,
   ReactSketchCanvasRef,
-} from 'react-sketch-canvas';
+} from 'traverse-sketch-canvas';
 
 type Handlers = [string, () => void, string][];
 

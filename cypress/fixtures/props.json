@@ -1,6 +1,6 @@
 {
-  "id": "react-sketch-canvas",
-  "className": "react-sketch-canvas",
+  "id": "traverse-sketch-canvas",
+  "className": "traverse-sketch-canvas",
   "width": "100%",
   "height": "500px",
   "backgroundImage": "https://upload.wikimedia.org/wikipedia/commons/7/70/Graph_paper_scan_1600x1000_%286509259561%29.jpg",

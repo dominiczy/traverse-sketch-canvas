@@ -30,20 +30,20 @@ This project was generated using [DTS](https://github.com/weiran-zsd/dts-cli).
 
 ### Wanna test React Sketch Canvas before using it?
 
-- **Try [here](https://vinoth.info/react-sketch-canvas)**
+- **Try [here](https://vinoth.info/traverse-sketch-canvas)**
 
 ## Installation
 
 If you use npm
 
 ```sh
-npm i react-sketch-canvas
+npm i traverse-sketch-canvas
 ```
 
 or with yarn
 
 ```sh
-yarn add react-sketch-canvas
+yarn add traverse-sketch-canvas
 ```
 
 ## Example
@@ -52,7 +52,7 @@ Common usage example
 
 ```javascript
 import * as React from 'react';
-import { ReactSketchCanvas } from 'react-sketch-canvas';
+import { ReactSketchCanvas } from 'traverse-sketch-canvas';
 
 const styles = {
   border: '0.0625rem solid #9c9c9c',
@@ -76,7 +76,7 @@ To export Data URL of your sketch use ref
 
 ```javascript
 import * as React from "react";
-import { ReactSketchCanvas } from "react-sketch-canvas";
+import { ReactSketchCanvas } from "traverse-sketch-canvas";
 
 const styles = {
   border: "0.0625rem solid #9c9c9c",
@@ -124,7 +124,7 @@ const Canvas = class extends React.Component {
 | ---------------------------------- | ----------------- | --------------------- | --------------------------------------------------------------------------------------------------- |
 | width                              | PropTypes.string  | 100%                  | canvas width (em/rem/px)                                                                            |
 | height                             | PropTypes.string  | 100%                  | canvas width (em/rem/px)                                                                            |
-| id                                 | PropTypes.string  | "react-sketch-canvas" | ID field to uniquely identify a SVG canvas (Supports multiple canvases in a single page)            |
+| id                                 | PropTypes.string  | "traverse-sketch-canvas" | ID field to uniquely identify a SVG canvas (Supports multiple canvases in a single page)            |
 | className                          | PropTypes.string  | ""                    | Class for using with CSS selectors                                                                  |
 | strokeColor                        | PropTypes.string  | black                 | Pen color                                                                                           |
 | canvasColor                        | PropTypes.string  | white                 | canvas color (HTML colors)                                                                          |
