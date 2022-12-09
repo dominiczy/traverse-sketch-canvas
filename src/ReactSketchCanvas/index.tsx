@@ -23,6 +23,8 @@ export interface ReactSketchCanvasProps {
   style?: React.CSSProperties;
   svgStyle?: React.CSSProperties;
   coordTrafo: (point: any) => any;
+  viewBox: any;
+  canvasBackgroundGroup: any;
   withTimestamp?: boolean;
 }
 
@@ -62,6 +64,8 @@ export const ReactSketchCanvas = React.forwardRef<
     },
     svgStyle = {},
     coordTrafo = coords => coords,
+    viewBox = undefined,
+    canvasBackgroundGroup = true,
     onChange = (_paths: CanvasPath[]): void => {},
     onStroke = (_path: CanvasPath, _isEraser: boolean): void => {},
     withTimestamp = false,
@@ -270,6 +274,8 @@ export const ReactSketchCanvas = React.forwardRef<
       style={style}
       svgStyle={svgStyle}
       coordTrafo={coordTrafo}
+      viewBox={viewBox}
+      canvasBackgroundGroup={canvasBackgroundGroup}
       paths={currentPaths}
       isDrawing={isDrawing}
       onPointerDown={handlePointerDown}

@@ -1,6 +1,6 @@
 {
   "name": "traverse-sketch-canvas",
-  "version": "6.3.0",
+  "version": "6.3.1",
   "description": "traverse-sketch-canvas - Freehand vector drawing tool for React using SVG as canvas",
   "author": "Dominic Zijlstra",
   "homepage": "https://traverse.link",

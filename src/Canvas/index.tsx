@@ -47,6 +47,8 @@ export interface CanvasProps {
   style: React.CSSProperties;
   svgStyle: React.CSSProperties;
   coordTrafo: (point: any) => any;
+  viewBox: any;
+  canvasBackgroundGroup: any;
 }
 
 export interface CanvasRef {
@@ -75,7 +77,9 @@ export const Canvas = React.forwardRef<CanvasRef, CanvasProps>((props, ref) => {
       borderRadius: '0.25rem',
     },
     svgStyle = {},
-    coordTrafo = coords => coords
+    coordTrafo = coords => coords,
+    viewBox = undefined,
+    canvasBackgroundGroup = true
   } = props;
 
   const canvasRef = React.useRef<HTMLDivElement>(null);
@@ -101,7 +105,6 @@ export const Canvas = React.forwardRef<CanvasRef, CanvasProps>((props, ref) => {
 
 
     const point: Point = coords;
-    console.log({ pointerEvent, point });
 
     return point;
   };
@@ -301,6 +304,7 @@ release drawing even when point goes out of canvas */
           ...svgStyle,
         }}
         id={id}
+        viewBox={viewBox || undefined}
       >
         <g id={`${id}__eraser-stroke-group`} display="none">
           <rect
@@ -361,16 +365,18 @@ release drawing even when point goes out of canvas */
             </mask>
           ))}
         </defs>
-        <g id={`${id}__canvas-background-group`}>
-          <rect
-            id={`${id}__canvas-background`}
-            x="0"
-            y="0"
-            width="100%"
-            height="100%"
-            fill={backgroundImage ? `url(#${id}__background)` : canvasColor}
-          />
-        </g>
+        {canvasBackgroundGroup && (
+          <g id={`${id}__canvas-background-group`}>
+            <rect
+              id={`${id}__canvas-background`}
+              x="0"
+              y="0"
+              width="100%"
+              height="100%"
+              fill={backgroundImage ? `url(#${id}__background)` : canvasColor}
+            />
+          </g>
+        )}
         {pathGroups.map((pathGroup, i) => (
           <g
             id={`${id}__stroke-group-${i}`}
